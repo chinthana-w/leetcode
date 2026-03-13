@@ -7,10 +7,8 @@ class Solution:
         max_area = 0
 
         while start_idx < end_idx:
-            max_area = max(
-                max_area, 
-                (end_idx - start_idx) * min(height[start_idx], height[end_idx])
-            )
+            new_area = (end_idx - start_idx) * min(height[start_idx], height[end_idx])
+            max_area = new_area if new_area > max_area else max_area
 
             if height[start_idx] < height[end_idx]:
                 start_idx += 1
