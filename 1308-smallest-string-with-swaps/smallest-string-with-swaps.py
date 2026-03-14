@@ -37,7 +37,7 @@ def get_groups(root_list):
 
     for i in range(len(root_list)):
         i_root = find(i, root_list)
-        if i_root in groups.keys():
+        if groups.get(i_root):
             groups[i_root].append(i)
         else:
             groups[i_root] = [i]
